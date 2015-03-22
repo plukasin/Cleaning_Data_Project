@@ -23,13 +23,13 @@ if (!file.exists(dataDir)) {
 
 ## load x and y for Test 
 ## load x and y for and Train
-xTrain <- read.table(file.path(dataDir, "train", "X_train.txt"))
-yTrain <- read.table(file.path(dataDir, "test", "y_test.txt"))
-xTest  <- read.table(file.path(dataDir, "train", "X_train.txt"))
-yTest  <- read.table(file.path(dataDir, "test", "y_test.txt"))
+dfXTrain <- read.table(file.path(dataDir, "train", "X_train.txt"))
+dfXTest <- read.table(file.path(dataDir, "test", "X_test.txt"))
+dfYTrain <- read.table(file.path(dataDir, "train", "y_train.txt"))
+dfYTest <- read.table(file.path(dataDir, "test", "y_test.txt"))
 
 # Merge X train and test data in new data frame dfMeasurements
-dfMeasurements <- rbind(xTrain, xTest)
+dfMeasurements <- rbind(dfXTrain, dfXTest)
 
 # Read feature names and assign them to the variables (column names)
 featureNames <- read.table(file.path(dataDir, "features.txt"))[,2]
